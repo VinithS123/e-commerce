@@ -1,16 +1,9 @@
 ﻿# 🛒 E-Commerce Microservices Backend
 
-<p align="left">
-  <img src="https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
-  <img src="https://img.shields.io/badge/Spring%20Boot-3.5-brightgreen?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot">
-  <img src="https://img.shields.io/badge/Spring%20Cloud-Microservices-0A6C74?style=for-the-badge&logo=spring&logoColor=white" alt="Spring Cloud">
-  <img src="https://img.shields.io/badge/Cloudinary-Media%20Management-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white" alt="Cloudinary">
-  <img src="https://img.shields.io/badge/Gemini%20AI-Product%20Intelligence-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI">
-  <img src="https://img.shields.io/badge/Twilio-SMS%20Ready-F22F46?style=for-the-badge&logo=twilio&logoColor=white" alt="Twilio">
-  <img src="https://img.shields.io/badge/MySQL-Relational%20DB-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/PostgreSQL-Configured-33679  1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
-  <img src="https://img.shields.io/badge/MongoDB-Product%20Catalog-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
-</p>
+## 🌟 Project Overview
+
+This backend powers an online shopping system where users can add and manage products, upload product images, and place orders easily. It automatically checks if items are in stock before confirming an order and updates availability in real time. The system can also answer simple questions about products using AI, and it is designed to handle multiple users smoothly by organizing different tasks like products, inventory, and orders into separate parts that work together seamlessly.
+
 
 ## 🏗️ Architecture Diagram
 
