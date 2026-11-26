@@ -9,6 +9,7 @@ import com.example.order_service.enums.OrderStatus;
 import com.example.order_service.exception.InvalidOrderException;
 import com.example.order_service.exception.OrderNotFoundException;
 import com.example.order_service.feign.InventoryServiceClient;
+import com.example.order_service.feign.UserServiceClient;
 import com.example.order_service.mapper.OrderMapper;
 import com.example.order_service.respository.OrderRepository;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,8 @@ public class OrderServiceImpl implements OrderService{
 
     final OrderRepository orderRepository;
 
+    final NotificationProducer notificationProducer;
+
     @Override
     public OrderDto placeOrder(OrderRequestDto orderRequestDto) {
 
@@ -39,7 +42,9 @@ public class OrderServiceImpl implements OrderService{
 
         if(inventoryDto.getReservedQuantity()>0){
             savedOrder.setOrderStatus(OrderStatus.RESERVED);
-            return  orderMapper.toOrderDto(orderRepository.save(savedOrder));
+            OrderDto orderDto =  orderMapper.toOrderDto(orderRepository.save(savedOrder));
+            notificationProducer.send(orderRequestDto.getUserId());
+            return orderDto;
         }
 
         savedOrder.setOrderStatus(OrderStatus.CANCELLED);

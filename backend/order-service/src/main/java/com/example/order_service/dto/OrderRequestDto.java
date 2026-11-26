@@ -9,4 +9,5 @@ public class OrderRequestDto {
 
     private long productQuantity;
 
+    private long userId;
 }

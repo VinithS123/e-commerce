@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommerceX | Storefront</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-$END$
+
+<!-- Navigation & Controls -->
+<header class="navbar">
+    <div class="logo">CommerceX</div>
+    <div class="controls">
+        <input type="text" id="search-input" placeholder="Search products...">
+        <button id="search-btn">Search</button>
+    </div>
+</header>
+
+<!-- Main Product Grid -->
+<main class="container">
+    <div id="loading-spinner" class="hidden">Loading products...</div>
+    <div id="product-grid" class="grid">
+        <!-- Product Cards will be injected here by JS -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <button id="prev-btn" disabled>Previous</button>
+        <span id="page-info">Page 1</span>
+        <button id="next-btn">Next</button>
+    </div>
+</main>
+
+<!-- Product Details & Order Modal -->
+<div id="product-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn" id="close-modal">&times;</span>
+        <div class="modal-body">
+            <div class="modal-image-container">
+                <img id="modal-image" src="" alt="Product Image">
+            </div>
+            <div class="modal-info">
+                <h2 id="modal-title">Product Name</h2>
+                <p id="modal-price">$0.00</p>
+                <p id="modal-desc">Description goes here.</p>
+                <p id="modal-stock" class="stock-info">Checking stock...</p>
+
+                <!-- Order Form -->
+                <div class="order-section">
+                    <label for="order-qty">Quantity:</label>
+                    <input type="number" id="order-qty" value="1" min="1">
+                    <button id="place-order-btn" class="primary-btn">Place Order</button>
+                </div>
+
+                <!-- Gemini AI Assistant -->
+                <div class="ai-section">
+                    <h3>Ask Gemini AI</h3>
+                    <input type="text" id="ai-query" placeholder="Ask about this product...">
+                    <button id="ask-ai-btn">Ask</button>
+                    <p id="ai-response" class="hidden"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notifications -->
+<div id="toast-container"></div>
+
+<script src="app.js"></script>
 </body>
 </html>
